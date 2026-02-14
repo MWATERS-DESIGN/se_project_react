@@ -1,0 +1,20 @@
+.footer {
+  background-color: #f3f3f3;
+}
+
+.footer__page-section {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 171px;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 500;
+}
+
+.footer__copyright {
+  margin: 0 0 24px;
+}
+
+.footer__date {
+  margin: 0 0 24px;
+}
