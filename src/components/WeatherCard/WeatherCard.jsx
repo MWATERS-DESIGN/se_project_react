@@ -12,9 +12,7 @@ function WeatherCard({ weatherData }) {
   let weatherOption;
   if (filteredOptions.length === 0) {
     weatherOption =
-      defaultWeatherOptions[weatherData.isDay ? "day" : "night"][
-        weatherData.condition
-      ];
+      defaultWeatherOptions[weatherData.isDay ? "day" : "night"].url;
   } else {
     weatherOption = filteredOptions[0];
   }
