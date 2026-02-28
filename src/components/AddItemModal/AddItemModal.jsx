@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import "./AddItemModal.css";
 import { useForm } from "../../hooks/useForm";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
@@ -8,7 +9,13 @@ const AddItemModal = ({ isOpen, onAddItem, onClose }) => {
     imageUrl: "",
     weatherType: "",
   };
-  const { values, handleChange } = useForm(defaultValues);
+  const { values, handleChange, setValues } = useForm(defaultValues);
+
+  useEffect(() => {
+    if (isOpen) {
+      setValues(defaultValues);
+    }
+  }, [isOpen]);
 
   function handleSubmit(evt) {
     evt.preventDefault();
@@ -64,6 +71,7 @@ const AddItemModal = ({ isOpen, onAddItem, onClose }) => {
             name="weatherType"
             className="modal__radio-input"
             onChange={handleChange}
+            required
           />
           Hot
         </label>
