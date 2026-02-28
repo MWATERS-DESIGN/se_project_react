@@ -27,6 +27,14 @@
 .modal__footer {
   margin: 20px 32px 32px;
   color: #000000;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.modal__info {
+  display: flex;
+  flex-direction: column;
 }
 
 .modal__caption {
@@ -38,4 +46,13 @@
 .modal__weather {
   margin: 0;
   font-size: 20px;
+}
+
+.modal__delete-btn {
+  color: #ff4d00;
+  background-color: transparent;
+  width: 98px;
+  height: 13px;
+  border: none;
+  cursor: pointer;
 }

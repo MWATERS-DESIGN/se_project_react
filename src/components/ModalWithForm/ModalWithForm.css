@@ -49,6 +49,13 @@
   border: 1px solid #0000004d;
 }
 
+.modal__content_type_image {
+  position: relative;
+  padding: 0;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
 .modal__input-label {
   display: flex;
   flex-direction: column;

@@ -1,0 +1,33 @@
+.clothes-section {
+  flex-grow: 1;
+}
+
+.clothes-section__row {
+  display: flex;
+  gap: 20px;
+  font-size: 20px;
+  font-weight: 700;
+  font-family: "Cabinet Grotesk", Arial, sans-serif;
+  margin: 0;
+}
+
+.clothes-section__text {
+  margin: 20px 0 0;
+}
+
+.clothes-section__items {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 323px);
+  grid-template-rows: repeat(auto-fit, 283px);
+  gap: 20px;
+  padding: 0;
+}
+
+.clothes-section__btn {
+  color: #00000099;
+  background-color: transparent;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  margin: 20px 0 0;
+}
