@@ -1,9 +1,15 @@
+import { useContext } from "react";
+import CurrentUserContext from "../../context/CurrentUserContext";
 import "./ItemModal.css";
 import close from "../../assets/whiteclose.svg";
 
-function ItemModal({ isOpen, onClose, card, onDeleteItem }) {
+function ItemModal({ isOpen, onClose, card, onDeleteItem, onOpenDeleteModal }) {
+  const currentUser = useContext(CurrentUserContext);
+
+  const isOwner = currentUser?._id && card.owner === currentUser._id;
+
   const handleDeleteClick = () => {
-    onDeleteItem(card);
+    onOpenDeleteModal(card);
   };
 
   return (
@@ -18,9 +24,11 @@ function ItemModal({ isOpen, onClose, card, onDeleteItem }) {
             <h2 className="modal__caption">{card.name}</h2>
             <p className="modal__weather">Weather: {card.weather}</p>
           </div>
-          <button onClick={handleDeleteClick} className="modal__delete-btn">
-            Delete Item
-          </button>
+          {isOwner && (
+            <button onClick={handleDeleteClick} className="modal__delete-btn">
+              Delete Item
+            </button>
+          )}
         </div>
       </div>
     </div>

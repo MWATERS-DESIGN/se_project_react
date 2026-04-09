@@ -5,9 +5,15 @@
   justify-content: center;
 }
 
-.card__name {
+.card__header {
   position: absolute;
+  display: flex;
   top: 15px;
+  align-items: center;
+  gap: 10px;
+}
+
+.card__name {
   margin: 0;
   font-size: 16px;
   color: #00000099;
@@ -21,4 +27,20 @@
   border: 1px solid #0000004d;
   border-radius: 8px;
   cursor: pointer;
+}
+
+.card__like-icon {
+  display: block;
+}
+
+.card__like-icon-button {
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.card__like-icon-button--active {
+  background-image: url("../../assets/like-active.svg");
 }

@@ -1,0 +1,43 @@
+.modal_type_delete-confirm .modal__actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 0;
+}
+
+/* confirm button (destructive) */
+.modal_type_delete-confirm .modal__submit-btn_delete {
+  background-color: transparent;
+  width: 138px;
+  height: 24px;
+  color: #ff4d00;
+  border: none;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* cancel button (secondary) */
+.modal_type_delete-confirm .modal__submit-btn_cancel {
+  background-color: #ffffff;
+  color: rgb(33, 33, 33);
+  width: 61px;
+  height: 24px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* title styling */
+.modal__title_delete-btn {
+  font-size: 20px;
+  text-align: center;
+  margin: 32px 0 40px;
+  padding: 0;
+}
+
+.modal_type_delete-confirm .modal__form-input {
+  background-color: #ffffff;
+  border: 1px solid rgb(33, 33, 33, 1);
+  color: rgb(33, 33, 33, 1);
+}

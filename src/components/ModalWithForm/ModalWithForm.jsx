@@ -10,6 +10,9 @@ function ModalWithForm({
   children,
   onSubmit,
   isLoading,
+  submitButtonClassName = "",
+  isSubmitDisabled = false,
+  extraButton,
 }) {
   return (
     <div className={`modal modal_type_${name} ${isOpen ? "modal_opened" : ""}`}>
@@ -18,15 +21,23 @@ function ModalWithForm({
         <button onClick={onClose} type="button" className="modal__close">
           <img src={close} alt="Close" />
         </button>
-        <form onSubmit={onSubmit} name={name} className="modal__form">
+        <form
+          onSubmit={onSubmit}
+          name={name}
+          className="modal__form"
+          noValidate
+        >
           {children}
-          <button
-            type="submit"
-            className="modal__submit-btn"
-            disabled={isLoading}
-          >
-            {isLoading ? "Saving..." : buttonText}
-          </button>
+          <div className="modal__actions">
+            <button
+              type="submit"
+              className={`modal__submit-btn ${submitButtonClassName}`}
+              disabled={isLoading || isSubmitDisabled}
+            >
+              {isLoading ? "Saving..." : buttonText}
+            </button>
+            {extraButton}
+          </div>
         </form>
       </div>
     </div>

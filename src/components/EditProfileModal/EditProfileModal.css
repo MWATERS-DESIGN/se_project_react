@@ -1,0 +1,36 @@
+.modal_type_edit-profile .modal__actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0;
+  margin-top: 32px;
+}
+
+.modal_type_edit-profile .modal__input-label_invalid {
+  color: #ff4d4f;
+}
+
+.modal_type_edit-profile .modal__submit-btn {
+  width: 128px;
+  height: 36px;
+  border-radius: 4px;
+  background-color: #000;
+  color: #ffffff;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.modal_type_edit-profile .modal__submit-btn.modal__submit-btn_active {
+  background-color: #000;
+  cursor: pointer;
+}
+
+.modal_type_edit-profile .modal__register-btn {
+  background-color: transparent;
+  color: #00000080;
+  font-size: 16px;
+  border-radius: 4px;
+  padding: 0;
+  border: none;
+}

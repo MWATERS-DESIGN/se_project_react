@@ -1,0 +1,36 @@
+.modal_type_register .modal__actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0;
+  margin-top: 32px;
+}
+
+.modal_type_register .modal__input-label_invalid {
+  color: #ff4d4f;
+}
+
+.modal_type_register .modal__submit-btn {
+  width: 73px;
+  height: 36px;
+  background-color: #0000004d;
+  color: #ffffff;
+  font-size: 16px;
+  border-radius: 4px;
+  border: none;
+  cursor: not-allowed;
+}
+
+.modal_type_register .modal__submit-btn.modal__submit-btn_active {
+  background-color: #000;
+  cursor: pointer;
+}
+
+.modal_type_register .modal__register-btn {
+  background-color: transparent;
+  color: #00000080;
+  font-size: 16px;
+  border-radius: 4px;
+  padding: 0;
+  border: none;
+}

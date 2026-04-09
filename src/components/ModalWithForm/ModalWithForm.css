@@ -83,6 +83,28 @@
   outline: none;
 }
 
+.modal__input-label_invalid {
+  border-bottom-color: #ff4d4f;
+}
+
+/* invalid input styling */
+.modal__input_invalid {
+  border-bottom-color: #ff4d4f;
+}
+
+/* error message styling (hidden by default) */
+.modal__error {
+  color: #ff4d4f;
+  font-size: 12px;
+  margin-top: 6px;
+  display: none;
+}
+
+/* visible when there is an error after submit */
+.modal__error_visible {
+  display: block;
+}
+
 .modal__legend {
   margin-bottom: 12px;
   font-size: 16px;
