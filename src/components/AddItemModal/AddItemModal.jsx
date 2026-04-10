@@ -10,16 +10,8 @@ const AddItemModal = ({ isOpen, onAddItem, onClose, isLoading }) => {
     imageUrl: "",
     weatherType: "",
   };
-  const {
-    values,
-    handleChange,
-    setValues,
-    errors,
-    isValid,
-    resetForm,
-    validateAll,
-    isSubmitted,
-  } = useFormWithValidation(defaultValues);
+  const { values, handleChange, errors, resetForm, validateAll, isSubmitted } =
+    useFormWithValidation(defaultValues);
 
   useEffect(() => {
     if (isOpen) {
@@ -48,12 +40,12 @@ const AddItemModal = ({ isOpen, onAddItem, onClose, isLoading }) => {
       isLoading={isLoading}
     >
       <div className="modal__form-input">
-        <label htmlFor="name" className="modal__input-label">
+        <label htmlFor="add-name" className="modal__input-label">
           Name{" "}
           <input
             type="text"
             name="name"
-            id="name"
+            id="add-name"
             className={`modal__input ${isSubmitted && errors.name ? "modal__input_invalid" : ""}`}
             placeholder="Name"
             value={values.name || ""}
@@ -65,12 +57,12 @@ const AddItemModal = ({ isOpen, onAddItem, onClose, isLoading }) => {
             {errors.name || ""}
           </span>
         </label>
-        <label htmlFor="imageUrl" className="modal__input-label">
+        <label htmlFor="add-imageUrl" className="modal__input-label">
           Image{" "}
           <input
             type="text"
             name="imageUrl"
-            id="imageUrl"
+            id="add-imageUrl"
             className={`modal__input ${isSubmitted && errors.imageUrl ? "modal__input_invalid" : ""}`}
             placeholder="Image URL"
             value={values.imageUrl || ""}

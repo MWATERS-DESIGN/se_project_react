@@ -57,12 +57,12 @@ function EditProfileModal({ isOpen, onClose, onUpdateProfile, isLoading }) {
       submitButtonClassName={isFormValid ? "modal__submit-btn_active" : ""}
     >
       <div className="modal__form-input">
-        <label htmlFor="name" className="modal__input-label">
+        <label htmlFor="edit-name" className="modal__input-label">
           Name*
           <input
             type="text"
             name="name"
-            id="name"
+            id="edit-name"
             className={`modal__input ${
               (touched.name || isSubmitted) && errors.name
                 ? "modal__input_invalid"
@@ -87,12 +87,12 @@ function EditProfileModal({ isOpen, onClose, onUpdateProfile, isLoading }) {
           </span>
         </label>
 
-        <label htmlFor="imageUrl" className="modal__input-label">
+        <label htmlFor="edit-imageUrl" className="modal__input-label">
           Avatar*
           <input
             type="url"
             name="imageUrl"
-            id="imageUrl"
+            id="edit-imageUrl"
             className={`modal__input ${
               (touched.imageUrl || isSubmitted) && errors.imageUrl
                 ? "modal__input_invalid"

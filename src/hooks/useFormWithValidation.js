@@ -8,19 +8,22 @@ function useFormWithValidation(initialValues = {}) {
   const [touched, setTouched] = useState({});
 
   const validateField = (name, value) => {
-    const v = value ?? "";
+    const valueStr = value ?? "";
     switch (name) {
       case "name": {
-        if (!v || v.trim() === "") return "Name is required.";
-        if (v.trim().length < 2) return "Name must be at least 2 characters.";
-        if (v.trim().length > 30) return "Name must be 30 characters or less.";
+        if (!valueStr || valueStr.trim() === "") return "Name is required.";
+        if (valueStr.trim().length < 2)
+          return "Name must be at least 2 characters.";
+        if (valueStr.trim().length > 30)
+          return "Name must be 30 characters or less.";
         return "";
       }
       case "imageUrl":
       case "avatar": {
-        if (!v || v.trim() === "") return "Image URL is required.";
+        if (!valueStr || valueStr.trim() === "")
+          return "Image URL is required.";
         try {
-          const url = new URL(v);
+          const url = new URL(valueStr);
           if (!["http:", "https:"].includes(url.protocol))
             return "Image URL must use http or https.";
         } catch {
@@ -29,20 +32,21 @@ function useFormWithValidation(initialValues = {}) {
         return "";
       }
       case "email": {
-        if (!v || v.trim() === "") return "Email is required.";
+        if (!valueStr || valueStr.trim() === "") return "Email is required.";
         // simple email regex
         // eslint-disable-next-line no-useless-escape
         const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRe.test(v)) return "Email is not valid.";
+        if (!emailRe.test(valueStr)) return "Email is not valid.";
         return "";
       }
       case "password": {
-        if (!v) return "Password is required.";
-        if (v.length < 6) return "Password must be at least 6 characters.";
+        if (!valueStr) return "Password is required.";
+        if (valueStr.length < 6)
+          return "Password must be at least 6 characters.";
         return "";
       }
       case "weatherType": {
-        if (!v) return "Please select a weather type.";
+        if (!valueStr) return "Please select a weather type.";
         return "";
       }
       default:

@@ -1,14 +1,13 @@
+import { handleServerResponse } from "../utils/api";
+
 const baseUrl = "http://localhost:3001";
 
 const headers = {
   "Content-Type": "application/json",
 };
 
-export const handleServerResponse = (res) => {
-  return res.ok ? res.json() : Promise.reject(`Error: ${res.status}`);
-};
-
-export const checkToken = (token) => {
+export const checkToken = () => {
+  const token = localStorage.getItem("jwt");
   return fetch(`${baseUrl}/users/me`, {
     method: "GET",
     headers: {
@@ -27,7 +26,6 @@ export const signup = ({ email, password, name, avatar }) => {
 };
 
 export const signin = ({ email, password }) => {
-  console.log("Sending login data:", { email, password });
   return fetch(`${baseUrl}/signin`, {
     method: "POST",
     headers,
@@ -36,7 +34,8 @@ export const signin = ({ email, password }) => {
 };
 
 // Added: updateProfile for PATCH /users/me
-export const updateProfile = ({ name, avatar }, token) => {
+export const updateProfile = ({ name, avatar }) => {
+  const token = localStorage.getItem("jwt");
   return fetch(`${baseUrl}/users/me`, {
     method: "PATCH",
     headers: {

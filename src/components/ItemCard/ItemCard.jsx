@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import "./ItemCard.css";
 import likebtn from "../../assets/likebtn.svg";
 import CurrentUserContext from "../../context/CurrentUserContext";

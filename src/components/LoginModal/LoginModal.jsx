@@ -100,12 +100,12 @@ const LoginModal = ({
       }
     >
       <div className="modal__form-input">
-        <label htmlFor="email" className="modal__input-label">
+        <label htmlFor="login-email" className="modal__input-label">
           Email
           <input
             type="email"
             name="email"
-            id="email"
+            id="login-email"
             required
             onBlur={handleBlur}
             onInvalid={(e) => e.preventDefault()}
@@ -130,14 +130,14 @@ const LoginModal = ({
         </label>
 
         <label
-          htmlFor="password"
+          htmlFor="login-password"
           className={`modal__input-label ${showPasswordError ? "modal__input-label_invalid" : ""}`}
         >
           {showPasswordError ? "Incorrect password" : "Password"}
           <input
             type="password"
             name="password"
-            id="password"
+            id="login-password"
             required
             minLength={6}
             onBlur={handleBlur}

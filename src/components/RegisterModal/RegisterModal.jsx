@@ -66,12 +66,12 @@ const RegisterModal = ({
       }
     >
       <div className="modal__form-input">
-        <label htmlFor="email" className="modal__input-label">
+        <label htmlFor="register-email" className="modal__input-label">
           Email*
           <input
             type="email"
             name="email"
-            id="email"
+            id="register-email"
             required
             onBlur={handleBlur}
             onInvalid={(e) => e.preventDefault()}
@@ -87,12 +87,12 @@ const RegisterModal = ({
           </span>
         </label>
 
-        <label htmlFor="password" className="modal__input-label">
+        <label htmlFor="register-password" className="modal__input-label">
           Password*
           <input
             type="password"
             name="password"
-            id="password"
+            id="register-password"
             required
             minLength={6}
             onBlur={handleBlur}
@@ -109,12 +109,12 @@ const RegisterModal = ({
           </span>
         </label>
 
-        <label htmlFor="name" className="modal__input-label">
+        <label htmlFor="register-name" className="modal__input-label">
           Name*
           <input
             type="text"
             name="name"
-            id="name"
+            id="register-name"
             required
             minLength={2}
             onBlur={handleBlur}
@@ -131,12 +131,12 @@ const RegisterModal = ({
           </span>
         </label>
 
-        <label htmlFor="avatar" className="modal__input-label">
+        <label htmlFor="register-avatar" className="modal__input-label">
           Avatar URL*
           <input
             type="url"
             name="avatar"
-            id="avatar"
+            id="register-avatar"
             required
             onBlur={handleBlur}
             onInvalid={(e) => e.preventDefault()}

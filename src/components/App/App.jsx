@@ -98,9 +98,8 @@ function App() {
     setIsLoading(true);
 
     // pass token for protected endpoint
-    const token = localStorage.getItem("jwt");
 
-    addItem(newItemData, token)
+    addItem(newItemData)
       .then((data) => {
         setClothingItems([data, ...clothingItems]);
         handleCloseClick();
@@ -169,7 +168,7 @@ function App() {
     if (!token) return;
 
     auth
-      .checkToken(token)
+      .checkToken()
       .then((userData) => {
         // checkToken should return the user's info when token is valid
         if (userData) {
@@ -224,10 +223,7 @@ function App() {
   }, []);
 
   const handleDeleteItem = (card) => {
-    // pass token for protected endpoint
-    const token = localStorage.getItem("jwt");
-
-    deleteItem(card._id, token)
+    deleteItem(card._id)
       .then(() => {
         setClothingItems(clothingItems.filter((item) => item._id !== card._id));
         handleCloseClick();
@@ -247,7 +243,7 @@ function App() {
     }
 
     if (!isLiked) {
-      addCardLike(id, token)
+      addCardLike(id)
         .then((updatedCard) => {
           setClothingItems((cards) =>
             cards.map((item) => (item._id === id ? updatedCard : item)),
@@ -255,7 +251,7 @@ function App() {
         })
         .catch(console.error);
     } else {
-      deleteCardLike(id, token)
+      deleteCardLike(id)
         .then((updatedCard) => {
           setClothingItems((cards) =>
             cards.map((item) => (item._id === id ? updatedCard : item)),
@@ -275,7 +271,7 @@ function App() {
     }
 
     return auth
-      .updateProfile({ name, avatar }, token)
+      .updateProfile({ name, avatar })
       .then((updatedUser) => {
         // server should return the updated user object
         if (updatedUser) {

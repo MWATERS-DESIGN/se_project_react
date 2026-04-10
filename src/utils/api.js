@@ -8,13 +8,12 @@ export const handleServerResponse = (res) => {
   return res.ok ? res.json() : Promise.reject(`Error: ${res.status}`);
 };
 
-const token = localStorage.getItem("jwt");
-
 export const getItems = () => {
   return fetch(`${baseUrl}/items`, { headers }).then(handleServerResponse);
 };
 
 export const addItem = ({ name, imageUrl, weather }) => {
+  const token = localStorage.getItem("jwt");
   return fetch(`${baseUrl}/items`, {
     method: "POST",
     headers: {
@@ -30,6 +29,7 @@ export const addItem = ({ name, imageUrl, weather }) => {
 };
 
 export const deleteItem = (itemId) => {
+  const token = localStorage.getItem("jwt");
   return fetch(`${baseUrl}/items/${itemId}`, {
     method: "DELETE",
     headers: {
@@ -39,7 +39,8 @@ export const deleteItem = (itemId) => {
   }).then(handleServerResponse);
 };
 
-export const addCardLike = (itemId, token) => {
+export const addCardLike = (itemId) => {
+  const token = localStorage.getItem("jwt");
   return fetch(`${baseUrl}/items/${itemId}/likes`, {
     method: "PUT",
     headers: {
@@ -49,7 +50,8 @@ export const addCardLike = (itemId, token) => {
   }).then(handleServerResponse);
 };
 
-export const deleteCardLike = (itemId, token) => {
+export const deleteCardLike = (itemId) => {
+  const token = localStorage.getItem("jwt");
   return fetch(`${baseUrl}/items/${itemId}/likes`, {
     method: "DELETE",
     headers: {
