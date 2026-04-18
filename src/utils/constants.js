@@ -76,3 +76,8 @@ export const coordinates = {
 };
 
 export const apiKey = "b0cdbc58c7678ffbf1d1cb7d717d50cc";
+
+export const baseUrl =
+  process.env.NODE_ENV === "production"
+    ? "https://api.mdw-wtwr.green-heroes.com"
+    : "http://localhost:3001";

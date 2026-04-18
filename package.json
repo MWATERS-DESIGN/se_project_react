@@ -3,11 +3,13 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://mdw-wtwr.green-heroes.com",
   "scripts": {
     "dev": "vite --open",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "npm run build && scp -r ./dist/* marquis_dwaters7@mdw-wtwr.green-heroes.com:/home/marquis_dwaters7/frontend"
   },
   "dependencies": {
     "normalize.css": "^8.0.1",
